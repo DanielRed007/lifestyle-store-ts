@@ -1,20 +1,21 @@
 import React from "react";
-import { ShoppingCartIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import {
+  ShoppingCartIcon,
+  ChevronDownIcon,
+  HomeModernIcon,
+} from "@heroicons/react/24/solid";
 import { Menu } from "@headlessui/react";
 import { Link } from "@remix-run/react";
 import PromoBanner from "./PromoBanner";
 
 export default function Navbar() {
-  const handleCartClick = () => {
-    console.log("Cart button clicked");
-  };
-
   return (
     <>
       <header className='bg-white shadow'>
         <div className='max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center'>
-          <h1 className='text-3xl font-bold text-gray-900'>
-            Omega Lifestyle Store
+          <h1 className='flex items-center text-3xl font-bold text-gray-900'>
+            <HomeModernIcon className='h-8 w-8 text-gray-700 mr-2' />
+            <div>Omega Lifestyle Store</div>
           </h1>
           <div className='flex items-center space-x-4'>
             <Link

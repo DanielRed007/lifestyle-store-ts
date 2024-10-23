@@ -1,4 +1,8 @@
-import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
+import {
+  ArrowUturnLeftIcon,
+  HomeModernIcon,
+  ShoppingBagIcon,
+} from "@heroicons/react/24/solid";
 import { Link } from "@remix-run/react";
 
 export default function Index() {
@@ -6,8 +10,9 @@ export default function Index() {
     <div className='min-h-screen bg-gray-100'>
       <header className='bg-white shadow'>
         <div className='max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center'>
-          <h1 className='text-3xl font-bold text-gray-900'>
-            Omega Lifestyle Store
+          <h1 className='flex items-center text-3xl font-bold text-gray-900'>
+            <ShoppingBagIcon className='h-8 w-8 text-gray-700 mr-2' />
+            <div>Omega Lifestyle Store</div>
           </h1>
           <div className='flex items-center space-x-4'>
             <Link

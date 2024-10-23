@@ -1,81 +1,15 @@
-import { Link } from "@remix-run/react";
+import { LoaderFunction } from "@remix-run/node";
+import { json, Link, useLoaderData } from "@remix-run/react";
 import Navbar from "~/components/Navbar";
+import { products } from "~/data/products";
+import { Product } from "~/models/product";
+
+export let loader: LoaderFunction = async () => {
+  return json(products);
+};
 
 export default function Index() {
-  const products = [
-    {
-      id: 1,
-      name: "Product 1",
-      price: "$100",
-      imageUrl: "/images/product1.jpg",
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      price: "$150",
-      imageUrl: "/images/product2.jpg",
-    },
-    {
-      id: 3,
-      name: "Product 3",
-      price: "$200",
-      imageUrl: "/images/product3.jpg",
-    },
-    {
-      id: 4,
-      name: "Product 4",
-      price: "$250",
-      imageUrl: "/images/product4.jpg",
-    },
-    {
-      id: 1,
-      name: "Product 1",
-      price: "$100",
-      imageUrl: "/images/product1.jpg",
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      price: "$150",
-      imageUrl: "/images/product2.jpg",
-    },
-    {
-      id: 3,
-      name: "Product 3",
-      price: "$200",
-      imageUrl: "/images/product3.jpg",
-    },
-    {
-      id: 4,
-      name: "Product 4",
-      price: "$250",
-      imageUrl: "/images/product4.jpg",
-    },
-    {
-      id: 1,
-      name: "Product 1",
-      price: "$100",
-      imageUrl: "/images/product1.jpg",
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      price: "$150",
-      imageUrl: "/images/product2.jpg",
-    },
-    {
-      id: 3,
-      name: "Product 3",
-      price: "$200",
-      imageUrl: "/images/product3.jpg",
-    },
-    {
-      id: 4,
-      name: "Product 4",
-      price: "$250",
-      imageUrl: "/images/product4.jpg",
-    },
-  ];
+  const data: Product[] = useLoaderData<any>();
 
   return (
     <div className='min-h-screen bg-gray-100'>
@@ -85,7 +19,7 @@ export default function Index() {
         <div className='max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
           <div className='px-4 py-6 sm:px-0'>
             <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-              {products.map((product) => (
+              {data.map((product: any) => (
                 <div
                   key={product.id}
                   className='bg-white rounded-lg shadow-lg p-6'
