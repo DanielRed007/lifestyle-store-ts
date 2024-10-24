@@ -2,14 +2,18 @@ import { LoaderFunction } from "@remix-run/node";
 import { json, Link, useLoaderData } from "@remix-run/react";
 import Navbar from "~/components/Navbar";
 import { products } from "~/data/products";
-import { Product } from "~/models/product";
+import { IProduct } from "~/interfaces/product";
+import Product from "~/models/product.model";
+import connectToDatabase from "~/utils/db.server";
 
 export let loader: LoaderFunction = async () => {
+  await connectToDatabase();
+
+  const products = await Product.find(); // Obtiene todos los productos desde MongoDB
   return json(products);
 };
-
 export default function Index() {
-  const data: Product[] = useLoaderData<any>();
+  const data: IProduct[] = useLoaderData<any>();
 
   return (
     <div className='min-h-screen bg-gray-100'>
@@ -19,9 +23,9 @@ export default function Index() {
         <div className='max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
           <div className='px-4 py-6 sm:px-0'>
             <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-              {data.map((product: any) => (
+              {data.map((product: any, index) => (
                 <div
-                  key={product.id}
+                  key={product._id}
                   className='bg-white rounded-lg shadow-lg p-6'
                 >
                   <img

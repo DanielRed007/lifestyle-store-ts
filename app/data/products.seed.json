@@ -1,0 +1,112 @@
+[{
+  "_id": {
+    "$oid": "671a48e70e26e3e4dee7251e"
+  },
+  "id": 1,
+  "name": "Product 1",
+  "description": "description text",
+  "price": 100,
+  "discountPrice": 80,
+  "discountPercentage": 20,
+  "taxes": 0.08,
+  "quantity": 10,
+  "imageUrl": "/images/product1.jpg"
+},
+{
+  "_id": {
+    "$oid": "671a48e70e26e3e4dee7251f"
+  },
+  "id": 2,
+  "name": "Product 2",
+  "description": "description text",
+  "price": 150,
+  "discountPrice": 120,
+  "discountPercentage": 20,
+  "taxes": 0.08,
+  "quantity": 5,
+  "imageUrl": "/images/product2.jpg"
+},
+{
+  "_id": {
+    "$oid": "671a48e70e26e3e4dee72520"
+  },
+  "id": 3,
+  "name": "Product 3",
+  "description": "description text",
+  "price": 200,
+  "discountPrice": 180,
+  "discountPercentage": 10,
+  "taxes": 0.08,
+  "quantity": 15,
+  "imageUrl": "/images/product3.jpg"
+},
+{
+  "_id": {
+    "$oid": "671a48e70e26e3e4dee72521"
+  },
+  "id": 4,
+  "name": "Product 4",
+  "description": "description text",
+  "price": 250,
+  "discountPrice": 200,
+  "discountPercentage": 20,
+  "taxes": 0.08,
+  "quantity": 8,
+  "imageUrl": "/images/product4.jpg"
+},
+{
+  "_id": {
+    "$oid": "671a49320e26e3e4dee72522"
+  },
+  "id": 1,
+  "name": "Product 1",
+  "description": "description text",
+  "price": 100,
+  "discountPrice": 80,
+  "discountPercentage": 20,
+  "taxes": 0.08,
+  "quantity": 10,
+  "imageUrl": "/images/product1.jpg"
+},
+{
+  "_id": {
+    "$oid": "671a49320e26e3e4dee72523"
+  },
+  "id": 2,
+  "name": "Product 2",
+  "description": "description text",
+  "price": 150,
+  "discountPrice": 120,
+  "discountPercentage": 20,
+  "taxes": 0.08,
+  "quantity": 5,
+  "imageUrl": "/images/product2.jpg"
+},
+{
+  "_id": {
+    "$oid": "671a49320e26e3e4dee72524"
+  },
+  "id": 3,
+  "name": "Product 3",
+  "description": "description text",
+  "price": 200,
+  "discountPrice": 180,
+  "discountPercentage": 10,
+  "taxes": 0.08,
+  "quantity": 15,
+  "imageUrl": "/images/product3.jpg"
+},
+{
+  "_id": {
+    "$oid": "671a49320e26e3e4dee72525"
+  },
+  "id": 4,
+  "name": "Product 4",
+  "description": "description text",
+  "price": 250,
+  "discountPrice": 200,
+  "discountPercentage": 20,
+  "taxes": 0.08,
+  "quantity": 8,
+  "imageUrl": "/images/product4.jpg"
+}]
