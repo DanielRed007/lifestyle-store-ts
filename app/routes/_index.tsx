@@ -1,7 +1,7 @@
 import { LoaderFunction } from "@remix-run/node";
 import { json, Link, useLoaderData } from "@remix-run/react";
 import Navbar from "~/components/Navbar";
-import { products } from "~/data/products";
+
 import { IProduct } from "~/interfaces/product";
 import Product from "~/models/product.model";
 import connectToDatabase from "~/utils/db.server";
@@ -30,7 +30,7 @@ export default function Index() {
                 >
                   <img
                     className='h-48 w-full object-cover rounded-t-lg'
-                    src={product.imageUrl}
+                    src={""}
                     alt={product.name}
                   />
                   <div className='mt-4'>
@@ -39,7 +39,7 @@ export default function Index() {
                     </h2>
                     <p className='text-gray-600'>{product.price}</p>
                     <Link
-                      to={`/products/${product.id}`}
+                      to={`/products/${product._id}`}
                       className='mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded-lg'
                     >
                       View Product
