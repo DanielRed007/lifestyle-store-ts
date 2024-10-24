@@ -32,7 +32,9 @@ export default function ProductDetail() {
                 />
                 <h1 className='text-2xl font-bold mt-4'>{product.name}</h1>
                 <p className='text-lg text-gray-700'>{product.price}</p>
-                <p className='mt-2'>{product.description}</p>
+                <p className='text-gray-600 text-xs leading-tight overflow-hidden overflow-ellipsis line-clamp-3'>
+                  {product.description}
+                </p>
               </div>
             </div>
           </div>
