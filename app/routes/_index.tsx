@@ -1,10 +1,15 @@
-import { EyeIcon, HeartIcon } from "@heroicons/react/24/outline";
+import {
+  EyeIcon,
+  HeartIcon,
+  PlusCircleIcon,
+} from "@heroicons/react/24/outline";
 import { LoaderFunction } from "@remix-run/node";
 import { json, Link, useLoaderData } from "@remix-run/react";
 import Navbar from "~/components/Navbar";
 
 import { IProduct } from "~/interfaces/product";
 import Product from "~/models/product.model";
+import { useShoppingCart } from "~/store/ShoppingCartContext";
 import connectToDatabase from "~/utils/db.server";
 
 export let loader: LoaderFunction = async () => {
@@ -15,6 +20,11 @@ export let loader: LoaderFunction = async () => {
 };
 export default function Index() {
   const data: IProduct[] = useLoaderData<any>();
+  const { addProduct } = useShoppingCart();
+
+  const addToCart = () => {
+    console.log("Add to cart");
+  };
 
   return (
     <div className='min-h-screen bg-gray-100'>
@@ -24,7 +34,7 @@ export default function Index() {
         <div className='max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
           <div className='px-4 py-6 sm:px-0'>
             <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-              {data.map((product: any, index) => (
+              {data.map((product: IProduct) => (
                 <div
                   key={product._id}
                   className='bg-white rounded-lg shadow-lg p-0'
@@ -34,24 +44,28 @@ export default function Index() {
                     src={product.imageUrl}
                     alt={product.name}
                   />
-                  <div className='p-5 mt-4'>
-                    <h2 className='text-lg font-semibold text-gray-900'>
+                  <div className='px-3 pt-2 mt-1'>
+                    <h2 className='text-lg font-bold text-gray-900'>
                       {product.name}
                     </h2>
-                    <p className='text-gray-600'>$ {product.price}</p>
-                    <div className='mt-2 inline-flex items-center'>
-                      <Link
-                        to={`/products/${product._id}`}
-                        className='bg-blue-500 text-white p-2 rounded-lg mr-2' // Added margin to separate icons
-                      >
+
+                    <div className='mt-1 flex flex-row'>
+                      <p className='text-gray-700 text-2xl px-0 mr-1'>
+                        $ {product.discountPrice}
+                      </p>
+                      <p className='text-gray-400 text-lg'>
+                        -{product.discountPercentage}%
+                      </p>
+                    </div>
+                    <div className='mt-2 mb-4 inline-flex items-center'>
+                      <Link to={`/products/${product._id}`} className='mr-2'>
                         <EyeIcon className='h-5 w-5' aria-hidden='true' />
                       </Link>
-                      <Link
-                        to={`/favorites/${product._id}`} // Update this route as needed
-                        className='bg-red-500 text-white p-2 rounded-lg' // Change color for differentiation
-                      >
-                        <HeartIcon className='h-5 w-5' aria-hidden='true' />
-                      </Link>
+                      <PlusCircleIcon
+                        className='h-5 w-5'
+                        aria-hidden='true'
+                        onClick={() => addProduct(product)}
+                      />
                     </div>
                   </div>
                 </div>
