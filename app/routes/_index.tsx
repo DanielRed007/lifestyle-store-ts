@@ -1,8 +1,5 @@
-import {
-  EyeIcon,
-  HeartIcon,
-  PlusCircleIcon,
-} from "@heroicons/react/24/outline";
+import { PlusCircleIcon } from "@heroicons/react/24/solid";
+import { EyeIcon } from "@heroicons/react/24/outline";
 import { LoaderFunction } from "@remix-run/node";
 import { json, Link, useLoaderData } from "@remix-run/react";
 import Navbar from "~/components/Navbar";
@@ -15,15 +12,20 @@ import connectToDatabase from "~/utils/db.server";
 export let loader: LoaderFunction = async () => {
   await connectToDatabase();
 
-  const products = await Product.find(); // Obtiene todos los productos desde MongoDB
+  const products = await Product.find();
   return json(products);
 };
 export default function Index() {
   const data: IProduct[] = useLoaderData<any>();
-  const { addProduct } = useShoppingCart();
+  const { addProduct, cart } = useShoppingCart();
 
-  const addToCart = () => {
-    console.log("Add to cart");
+  const addToCart = (product: IProduct) => {
+    console.log("Display a modal first, then trigger this action");
+    addProduct(product);
+  };
+
+  const isProductSelected = (product: IProduct) => {
+    return cart.items.find((i) => i._id === product._id);
   };
 
   return (
@@ -59,12 +61,16 @@ export default function Index() {
                     </div>
                     <div className='mt-2 mb-4 inline-flex items-center'>
                       <Link to={`/products/${product._id}`} className='mr-2'>
-                        <EyeIcon className='h-5 w-5' aria-hidden='true' />
+                        <EyeIcon className='h-7 w-7' aria-hidden='true' />
                       </Link>
                       <PlusCircleIcon
-                        className='h-5 w-5'
+                        className={`h-7 w-7 ${
+                          isProductSelected(product)
+                            ? "text-red-500"
+                            : "text-blue-700"
+                        }`}
                         aria-hidden='true'
-                        onClick={() => addProduct(product)}
+                        onClick={() => addToCart(product)}
                       />
                     </div>
                   </div>

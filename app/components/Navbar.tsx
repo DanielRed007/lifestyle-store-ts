@@ -8,6 +8,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { Link } from "@remix-run/react";
 import PromoBanner from "./PromoBanner";
 import { useShoppingCart } from "../store/ShoppingCartContext";
+import Badge from "./Badge";
 
 export default function Navbar() {
   const { cart } = useShoppingCart();
@@ -25,9 +26,10 @@ export default function Navbar() {
           <div className='flex items-center space-x-4'>
             <Link
               to='/cart'
-              className='p-2 rounded-full bg-gray-100 hover:bg-gray-200 focus:outline-none'
+              className='relative p-2 rounded-full bg-gray-100 hover:bg-gray-200 focus:outline-none'
             >
-              <h1>{cart.items.length}</h1>
+              <Badge count={cart.items.length} />
+
               <ShoppingCartIcon className='h-8 w-8 text-gray-700' />
             </Link>
 
