@@ -1,3 +1,4 @@
+import { createFileSessionStorage } from "@remix-run/node";
 import React, {
   createContext,
   useContext,
@@ -9,6 +10,10 @@ import { IProduct } from "~/interfaces/product";
 
 type Cart = {
   items: IProduct[] | [];
+  subTotal: number;
+  tax: number;
+  shipping: number;
+  total: number;
 };
 
 type ShoppingCartContextType = {
@@ -20,7 +25,13 @@ const ShoppingCartContext = createContext<ShoppingCartContextType | undefined>(
   undefined
 );
 
-const cartInitialState = { items: [] };
+const cartInitialState: Cart = {
+  items: [],
+  subTotal: 0,
+  tax: 0,
+  total: 0,
+  shipping: 0,
+};
 
 export const ShoppingCartProvider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -32,9 +43,17 @@ export const ShoppingCartProvider: React.FC<{ children: ReactNode }> = ({
       ...prevCart,
       items: [...prevCart.items, product],
     }));
+
+    updateShoppingCart(product);
   };
 
-  useEffect(() => {}, [cart]);
+  const updateShoppingCart = (product: IProduct) => {
+    console.table(product);
+  };
+
+  useEffect(() => {
+    //
+  }, [cart]);
 
   return (
     <ShoppingCartContext.Provider value={{ cart, addProduct }}>

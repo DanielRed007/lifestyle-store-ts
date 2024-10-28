@@ -8,8 +8,7 @@ import Navbar from "~/components/Navbar";
 export let loader: LoaderFunction = async ({ params }) => {
   await connectToDatabase();
 
-  const product: IProduct | null = await Product.findById(params.id); // Obtiene todos los productos desde MongoDB
-  console.log({ product });
+  const product: IProduct | null = await Product.findById(params.id);
   return json(product);
 };
 

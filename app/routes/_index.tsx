@@ -25,7 +25,7 @@ export default function Index() {
   };
 
   const isProductSelected = (product: IProduct) => {
-    return cart.items.find((i) => i._id === product._id);
+    return cart.items.some((i) => i._id === product._id);
   };
 
   return (
@@ -63,15 +63,18 @@ export default function Index() {
                       <Link to={`/products/${product._id}`} className='mr-2'>
                         <EyeIcon className='h-7 w-7' aria-hidden='true' />
                       </Link>
-                      <PlusCircleIcon
-                        className={`h-7 w-7 ${
-                          isProductSelected(product)
-                            ? "text-red-500"
-                            : "text-blue-700"
-                        }`}
-                        aria-hidden='true'
-                        onClick={() => addToCart(product)}
-                      />
+                      {isProductSelected(product) ? (
+                        <PlusCircleIcon
+                          className={`h-7 w-7 text-red-500`}
+                          aria-hidden='true'
+                        />
+                      ) : (
+                        <PlusCircleIcon
+                          className={`h-7 w-7 text-blue-500`}
+                          aria-hidden='true'
+                          onClick={() => addToCart(product)}
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
