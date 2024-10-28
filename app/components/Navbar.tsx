@@ -13,8 +13,6 @@ import Badge from "./Badge";
 export default function Navbar() {
   const { cart } = useShoppingCart();
 
-  console.log(cart);
-
   return (
     <>
       <header className='bg-white shadow'>
