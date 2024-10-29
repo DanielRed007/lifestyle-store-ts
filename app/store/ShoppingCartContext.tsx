@@ -28,9 +28,9 @@ const ShoppingCartContext = createContext<ShoppingCartContextType | undefined>(
 const cartInitialState: Cart = {
   items: [],
   subTotal: 0,
-  tax: 0,
+  tax: 0.23,
   total: 0,
-  shipping: 0,
+  shipping: 5.5,
 };
 
 export const ShoppingCartProvider: React.FC<{ children: ReactNode }> = ({
@@ -39,21 +39,22 @@ export const ShoppingCartProvider: React.FC<{ children: ReactNode }> = ({
   const [cart, setCart] = useState<Cart>(cartInitialState);
 
   const addProduct = (product: IProduct) => {
-    setCart((prevCart) => ({
-      ...prevCart,
-      items: [...prevCart.items, product],
-    }));
+    setCart((prevCart) => {
+      let totalPrice = prevCart.items
+        .map((item) => item.price)
+        .reduce((acc, val) => acc + val, 0);
 
-    updateShoppingCart(product);
+      totalPrice += product.price;
+
+      return {
+        ...prevCart,
+        items: [...prevCart.items, product],
+        subTotal: totalPrice,
+      };
+    });
   };
 
-  const updateShoppingCart = (product: IProduct) => {
-    console.table(product);
-  };
-
-  useEffect(() => {
-    //
-  }, [cart]);
+  useEffect(() => {}, [cart]);
 
   return (
     <ShoppingCartContext.Provider value={{ cart, addProduct }}>

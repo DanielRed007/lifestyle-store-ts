@@ -1,112 +1,114 @@
-[{
-  "_id": {
-    "$oid": "671a48e70e26e3e4dee7251e"
+[
+  {
+    "_id": {
+      "$oid": "671a48e70e26e3e4dee7251e"
+    },
+    "id": 1,
+    "name": "Delicious Wild Cherries",
+    "description": "Commercial cherries are obtained from cultivars of several species, such as the sweet Prunus avium and the sour Prunus cerasus. The name 'cherry' also refers to the cherry tree and its wood, and is sometimes applied to almonds and visually similar flowering trees in the genus Prunus, as in \"ornamental cherry\" or \"cherry blossom.\" Wild cherry may refer to any of the cherry species growing outside cultivation, although Prunus avium is often referred to specifically by the name \"wild cherry\" in the British Isles.",
+    "price": 100,
+    "discountPrice": 80,
+    "discountPercentage": 20,
+    "taxes": 0.08,
+    "quantity": 10,
+    "imageUrl": "/images/cherry.jpg"
   },
-  "id": 1,
-  "name": "Product 1",
-  "description": "description text",
-  "price": 100,
-  "discountPrice": 80,
-  "discountPercentage": 20,
-  "taxes": 0.08,
-  "quantity": 10,
-  "imageUrl": "/images/product1.jpg"
-},
-{
-  "_id": {
-    "$oid": "671a48e70e26e3e4dee7251f"
+  {
+    "_id": {
+      "$oid": "671a48e70e26e3e4dee7251f"
+    },
+    "id": 2,
+    "name": "Chrono-Timepiece Watch",
+    "description": "This premium watch combines precision engineering with timeless design. Featuring a classic analog dial and quartz movement, it appeals to watch enthusiasts and those who value elegance. Known for durability and accuracy, it is designed to complement both casual and formal wear, making it a versatile choice for any occasion.",
+    "price": 150,
+    "discountPrice": 120,
+    "discountPercentage": 20,
+    "taxes": 0.08,
+    "quantity": 5,
+    "imageUrl": "/images/chrono.jpg"
   },
-  "id": 2,
-  "name": "Product 2",
-  "description": "description text",
-  "price": 150,
-  "discountPrice": 120,
-  "discountPercentage": 20,
-  "taxes": 0.08,
-  "quantity": 5,
-  "imageUrl": "/images/product2.jpg"
-},
-{
-  "_id": {
-    "$oid": "671a48e70e26e3e4dee72520"
+  {
+    "_id": {
+      "$oid": "671a48e70e26e3e4dee72520"
+    },
+    "id": 3,
+    "name": "Ancient Dagger Replica",
+    "description": "This finely crafted dagger pays homage to traditional weaponry, drawing inspiration from ancient designs. Featuring a high-quality blade and detailed handle, it is suited for historical displays or enthusiasts. The design reflects an appreciation for craftsmanship and intricate detailing, capturing the spirit of a bygone era.",
+    "price": 200,
+    "discountPrice": 180,
+    "discountPercentage": 10,
+    "taxes": 0.08,
+    "quantity": 15,
+    "imageUrl": "/images/dagger.jpg"
   },
-  "id": 3,
-  "name": "Product 3",
-  "description": "description text",
-  "price": 200,
-  "discountPrice": 180,
-  "discountPercentage": 10,
-  "taxes": 0.08,
-  "quantity": 15,
-  "imageUrl": "/images/product3.jpg"
-},
-{
-  "_id": {
-    "$oid": "671a48e70e26e3e4dee72521"
+  {
+    "_id": {
+      "$oid": "671a48e70e26e3e4dee72521"
+    },
+    "id": 4,
+    "name": "Reflex Camera - Retro Style",
+    "description": "This retro-style reflex camera is designed for photography enthusiasts who appreciate both the art and science of film. Combining classic aesthetics with modern mechanics, it offers versatile shooting options and delivers excellent image quality. It is ideal for capturing landscapes, portraits, and more.",
+    "price": 250,
+    "discountPrice": 200,
+    "discountPercentage": 20,
+    "taxes": 0.08,
+    "quantity": 8,
+    "imageUrl": "/images/reflex.jpg"
   },
-  "id": 4,
-  "name": "Product 4",
-  "description": "description text",
-  "price": 250,
-  "discountPrice": 200,
-  "discountPercentage": 20,
-  "taxes": 0.08,
-  "quantity": 8,
-  "imageUrl": "/images/product4.jpg"
-},
-{
-  "_id": {
-    "$oid": "671a49320e26e3e4dee72522"
+  {
+    "_id": {
+      "$oid": "671a49320e26e3e4dee72522"
+    },
+    "id": 5,
+    "name": "Sleek Sunglasses",
+    "description": "These stylish sunglasses feature polarized lenses, offering superior UV protection and enhanced clarity in bright conditions. Crafted for both fashion and function, the sleek design and comfortable fit make them perfect for daily wear or beach outings. A must-have accessory for sunny days.",
+    "price": 100,
+    "discountPrice": 80,
+    "discountPercentage": 20,
+    "taxes": 0.08,
+    "quantity": 10,
+    "imageUrl": "/images/sunglass.jpg"
   },
-  "id": 1,
-  "name": "Product 1",
-  "description": "description text",
-  "price": 100,
-  "discountPrice": 80,
-  "discountPercentage": 20,
-  "taxes": 0.08,
-  "quantity": 10,
-  "imageUrl": "/images/product1.jpg"
-},
-{
-  "_id": {
-    "$oid": "671a49320e26e3e4dee72523"
+  {
+    "_id": {
+      "$oid": "671a49320e26e3e4dee72523"
+    },
+    "id": 6,
+    "name": "Organic Raw Almonds",
+    "description": "Sourced from trusted orchards, these raw almonds are packed with protein, healthy fats, and antioxidants. Naturally rich in vitamin E and magnesium, they make an excellent snack for energy and nutrition. Perfect for healthy recipes or as a standalone snack, supporting both taste and wellness.",
+    "price": 150,
+    "discountPrice": 120,
+    "discountPercentage": 20,
+    "taxes": 0.08,
+    "quantity": 5,
+    "imageUrl": "/images/almonds.jpg"
   },
-  "id": 2,
-  "name": "Product 2",
-  "description": "description text",
-  "price": 150,
-  "discountPrice": 120,
-  "discountPercentage": 20,
-  "taxes": 0.08,
-  "quantity": 5,
-  "imageUrl": "/images/product2.jpg"
-},
-{
-  "_id": {
-    "$oid": "671a49320e26e3e4dee72524"
+  {
+    "_id": {
+      "$oid": "671a49320e26e3e4dee72524"
+    },
+    "id": 7,
+    "name": "Elegant Teal Fabric",
+    "description": "This rich teal fabric combines elegance and durability, perfect for upholstery, drapery, and crafting projects. Made with high-quality fibers, it offers a soft texture and is designed to retain its vibrant color over time, making it an excellent choice for home decor and fashion.",
+    "price": 200,
+    "discountPrice": 180,
+    "discountPercentage": 10,
+    "taxes": 0.08,
+    "quantity": 15,
+    "imageUrl": "/images/teal.jpg"
   },
-  "id": 3,
-  "name": "Product 3",
-  "description": "description text",
-  "price": 200,
-  "discountPrice": 180,
-  "discountPercentage": 10,
-  "taxes": 0.08,
-  "quantity": 15,
-  "imageUrl": "/images/product3.jpg"
-},
-{
-  "_id": {
-    "$oid": "671a49320e26e3e4dee72525"
-  },
-  "id": 4,
-  "name": "Product 4",
-  "description": "description text",
-  "price": 250,
-  "discountPrice": 200,
-  "discountPercentage": 20,
-  "taxes": 0.08,
-  "quantity": 8,
-  "imageUrl": "/images/product4.jpg"
-}]
+  {
+    "_id": {
+      "$oid": "671a49320e26e3e4dee72525"
+    },
+    "id": 8,
+    "name": "Sporty Digital Watch",
+    "description": "A multifunctional digital watch designed for active lifestyles. It features a stopwatch, timer, and waterproof capabilities, suitable for sports and outdoor adventures. The lightweight yet durable construction ensures comfort and resilience, ideal for those who love to stay active.",
+    "price": 250,
+    "discountPrice": 200,
+    "discountPercentage": 20,
+    "taxes": 0.08,
+    "quantity": 8,
+    "imageUrl": "/images/watch.jpg"
+  }
+]
