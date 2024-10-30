@@ -13,20 +13,26 @@ import Badge from "./Badge";
 export default function Navbar() {
   const { cart } = useShoppingCart();
 
+  const itemCount = cart.items.length;
+
   return (
     <>
       <header className='bg-white shadow'>
         <div className='max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center'>
-          <h1 className='flex items-center text-3xl font-bold text-gray-900'>
-            <HomeModernIcon className='h-8 w-8 text-gray-700 mr-2' />
-            <div>Omega Lifestyle Store</div>
-          </h1>
+          <Link to={"/"}>
+            <h1 className='flex items-center text-3xl font-bold'>
+              <HomeModernIcon className='h-8 w-8 text-blue-900 mr-2' />
+              <div className='text-blue-900 font-light'>
+                Omega Lifestyle Store
+              </div>
+            </h1>
+          </Link>
           <div className='flex items-center space-x-4'>
             <Link
               to='/cart'
               className='relative p-2 rounded-full bg-gray-100 hover:bg-gray-200 focus:outline-none'
             >
-              <Badge count={cart.items.length} />
+              {itemCount > 0 && <Badge count={itemCount} />}
 
               <ShoppingCartIcon className='h-8 w-8 text-gray-700' />
             </Link>

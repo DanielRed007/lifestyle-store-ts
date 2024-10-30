@@ -23,12 +23,12 @@ export default function ProductCard({ product, isSelected, addToCart }: Props) {
         alt={product.name}
       />
       <div className='px-4 py-3'>
-        <h2 className='text-lg font-bold text-gray-900 truncate'>
+        <h2 className='text-lg font-regular text-gray-900 truncate'>
           {product.name}
         </h2>
 
         <div className='mt-1 flex items-baseline'>
-          <p className='text-gray-700 text-2xl font-semibold mr-2'>
+          <p className='text-gray-600 text-3xl font-semibold mr-2'>
             ${product.discountPrice > 0 ? product.discountPrice : product.price}
           </p>
           {product.discountPrice > 0 && (
