@@ -4,8 +4,17 @@ import {
   ShoppingBagIcon,
 } from "@heroicons/react/24/solid";
 import { Link } from "@remix-run/react";
+import { useEffect } from "react";
+import CartItem from "~/components/CartItem";
+import { useShoppingCart } from "~/store/ShoppingCartContext";
 
 export default function Index() {
+  const { cart } = useShoppingCart();
+
+  useEffect(() => {
+    console.log({ cart });
+  }, []);
+
   return (
     <div className='min-h-screen bg-gray-100'>
       <header className='bg-white shadow'>
@@ -33,7 +42,7 @@ export default function Index() {
                 Shopping Cart
               </h1>
               <div className='mt-6'>
-                <div className='border-b border-gray-200 pb-4 mb-4'>
+                {/* <div className='border-b border-gray-200 pb-4 mb-4'>
                   <h2 className='text-xl font-semibold text-gray-800'>
                     Item Name
                   </h2>
@@ -46,7 +55,18 @@ export default function Index() {
                   </h2>
                   <p className='text-gray-600'>Description of another item.</p>
                   <p className='text-gray-900 font-bold'>$XX.XX</p>
-                </div>
+                </div> */}
+                {cart.items.length > 0
+                  ? cart.items.map((item, index) => (
+                      <CartItem
+                        key={index}
+                        product={item}
+                        quantity={1}
+                        removeFromCart={() => console.log("Remove")}
+                        updateQuantity={() => console.log("Update")}
+                      />
+                    ))
+                  : "No Items to Show"}
               </div>
               <div className='mt-6'>
                 <h2 className='text-lg font-bold text-gray-900'>
